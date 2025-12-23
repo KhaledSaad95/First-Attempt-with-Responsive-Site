@@ -1,0 +1,17 @@
+Steps For Site 
+
+1 - Create basic Layout using HTML [Done]
+2 - Use Header / section / footer [Done]
+3 - create bullets to nav through site sections [Done]
+4 - make the bullet show the active section on site [Done]
+5 - make the background img change randomly (function to excute every set time) [Done]
+6 - create setting button [ make the gear rotate when the setting open]  [Done]
+6.1 - change the color of the site  [Done]
+6.2 - make option to make random background  [Done]
+6.3 - make option to show & hide bullets  [Done]
+7 - add selected setting to local storage [Done]
+8 - make the setting check the local storage and use it if exist [Done]
+9 - make contact form and check the mail field if valid (example@domin.com)
+10 - on submit the form make massage appear (thanks to msg us) and wait time to redirect to the page
+11 - add the msgs to json data base 
+12 - make the site responsive [Done]
