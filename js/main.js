@@ -155,43 +155,67 @@ hideBtn.onclick = function () {
 }
 
 
-
+mainHtml.style.setProperty('--accent-color', `#FF9800`);
 // Local Storage Settings
 window.onload = function () {
+
+
     let bgSlider = window.localStorage.getItem("background-Slider");
-    if (bgSlider === "true") {
-        startSlider();
-        randomBgLb.classList.add("active");
-        fixedBgLb.classList.remove("active");
+    if (bgSlider) {
+        if (bgSlider === "true") {
+            startSlider();
+            randomBgLb.classList.add("active");
+            fixedBgLb.classList.remove("active");
+        } else if (bgSlider === "false") {
+            stopSlider();
+            randomBgLb.classList.remove("active");
+            fixedBgLb.classList.add("active");
+        }
     } else {
-        stopSlider();
-        randomBgLb.classList.remove("active");
-        fixedBgLb.classList.add("active");
+        startSlider();
     }
+
+
 
 
     let showBtnLS = window.localStorage.getItem("show-btn");
-    if (showBtnLS === "true") {
-        SectionBtns.style.display = "flex";
+    if (showBtnLS) {
+        if (showBtnLS === "true") {
+            SectionBtns.style.display = "flex";
+            showBtnLb.classList.add("active");
+            hideBtnLb.classList.remove("active");
+        } else if (showBtnLS === "false") {
+            SectionBtns.style.display = "none";
+            showBtnLb.classList.remove("active");
+            hideBtnLb.classList.add("active");
+        }
+    } else {
+        SectionBtns.style.display = "flex"
         showBtnLb.classList.add("active");
         hideBtnLb.classList.remove("active");
-    } else {
-        SectionBtns.style.display = "none";
-        showBtnLb.classList.remove("active");
-        hideBtnLb.classList.add("active");
+        window.localStorage.setItem(`show-btn`, "true");
     }
 
 
+
     // Color Selector
-    mainHtml.style.setProperty('--accent-color', `${window.localStorage.getItem(`--accent-color`)}`);
     let colorInner = window.localStorage.getItem(`--accent-color`);
-    let activeLb = document.querySelector(`[data-color="${colorInner}"]`);
-    colorOptions.forEach((e) => {
+    if (colorInner) {
+        mainHtml.style.setProperty('--accent-color', `${window.localStorage.getItem(`--accent-color`)}`);
+        let activeLb = document.querySelector(`[data-color="${colorInner}"]`);
+        colorOptions.forEach((e) => {
+            colorOptionsLb.forEach((el) => {
+                el.classList.remove("active");
+            })
+        });
+        activeLb.nextElementSibling.classList.add('active');
+    } else {
+        mainHtml.style.setProperty('--accent-color', `#FF9800`);
         colorOptionsLb.forEach((el) => {
             el.classList.remove("active");
         })
-    });
-    activeLb.nextElementSibling.classList.add('active');
+        colorOptionsLb[0].classList.add("active");
+    }
 }
 
 
@@ -228,6 +252,58 @@ resetOption.onclick = function () {
     window.localStorage.setItem(`--accent-color`, `#FF9800`)
     window.localStorage.setItem(`show-btn`, "true");
     startSlider();
-
-
 }
+
+// Create Token For trial
+
+function generateToken() {
+    return Math.random().toString(36).substring(2) +
+        Math.random().toString(36).substring(2);
+}
+
+const token = generateToken();
+
+// Contact From API
+
+const form = document.getElementById("form");
+const result = document.getElementById("result")
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify({ ...object, token });
+    const tokenStr = JSON.stringify(token);
+    result.innerHTML = "Please wait...";
+
+    fetch('http://localhost:3001/users', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        body: json
+    }).then(async (response) => {
+        window.localStorage.setItem("Token_Key", tokenStr)
+        let json = await response.json();
+        if (response.status == 200) {
+            result.innerHTML = json.message;
+        } else {
+            console.log(response);
+            result.innerHTML = json.message;
+        }
+    }).catch(error => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+    }).then(function () {
+        form.reset();
+        setTimeout(() => {
+            result.style.display = "none";
+        }, 3000);
+    });
+});
+
+
+
+
