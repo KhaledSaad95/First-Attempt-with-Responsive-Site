@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+
+/* Start Grid System */
+
+/* End Grid System */
+
+.lg-container {
+    min-height: 100vh;        /* full viewport height */
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; 
+    text-align: center;
+    color: #FFF;
+}
+
+.lg-box  {
+    background-color: #009688;
+    /* height: 300px; */
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 10px; 
+}
+
+.lg-box h1 {
+    margin-bottom: 20px;
+}
+
+.chk-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.chk-box input[type="checkbox"] {
+    display: none;
+}
+
+.chk-box label {
+    position: relative;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.chk-box label::before {
+    content: "";
+    height: 15px;
+    width: 15px;
+    background-color: #FFF;
+    border: 2px solid #009688 ;
+    position: absolute;
+    left: -20px;
+    top: 1px;
+    transition: 0.7s ease;
+}
+
+.chk-box input[type="checkbox"]:checked + label::before {
+    background-color: #009688;
+    border: 2px solid #fff;
+}
+
+.lg-box input {
+    height: 40px;
+    margin: 10px;
+    width: 250px;
+    padding: 5px;
+}
+
+.lg-box input[type="submit"] {
+    height: 35px;
+    margin-top: 20px;
+}
+
+.lg-box input[type="submit"]:hover {
+    background-color: #009688;
+    border: 3px solid #fff;
+    color: #fff;
+}
+

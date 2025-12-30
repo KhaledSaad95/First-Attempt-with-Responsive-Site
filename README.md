@@ -10,3 +10,8 @@ npm install -g json-server (as static server don't support POST / PUT / DELETE M
 then run the server 
 
 json-server --watch Data-base/db.json --port 3001
+
+Login Information
+E-mail : admin@site.com
+Pass : admin123
+Remeber Me check : to save login session in local storage

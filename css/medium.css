@@ -1086,6 +1086,22 @@ aside {
     margin: 10px;
 }
 
+.logout-btn {
+    width: 90%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid white;
+    background-color: var(--accent-color);
+    text-align: center;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    top: 220px;
+}
+
 .gear-btn input {
     display: none;
     position: fixed;
@@ -1137,4 +1153,9 @@ aside:has(.gear-btn input:checked) {
     100% {
         transform: rotate(360deg);
     }
+}
+
+#notice  {
+    text-align: center;
+    line-height: 1.54;
 }

@@ -262,6 +262,8 @@ function generateToken() {
 }
 
 const token = generateToken();
+// const tokens = generateToken(); // make arry of 5 tokens use to sign up for new users [New Feature Will add next Ver.] 
+
 
 // Contact From API
 
@@ -273,7 +275,6 @@ form.addEventListener("submit", (e) => {
     const formData = new FormData(form);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify({ ...object, token });
-    const tokenStr = JSON.stringify(token);
     result.innerHTML = "Please wait...";
 
     fetch('http://localhost:3001/users', {
@@ -281,11 +282,11 @@ form.addEventListener("submit", (e) => {
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
-            'Authorization': `Bearer ${token}`
+            // 'Authorization': `Bearer ${token}`
         },
         body: json
     }).then(async (response) => {
-        window.localStorage.setItem("Token_Key", tokenStr)
+        window.localStorage.setItem("Token_Key", token)
         let json = await response.json();
         if (response.status == 200) {
             result.innerHTML = json.message;
@@ -305,5 +306,12 @@ form.addEventListener("submit", (e) => {
 });
 
 
+// Logout btn
 
+let logoutBtn = document.querySelector(".logout-btn");
+
+logoutBtn.addEventListener("click", function () {
+    localStorage.clear();
+    window.location.href = 'index.html';
+})
 

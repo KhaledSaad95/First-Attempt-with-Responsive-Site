@@ -1,119 +1,12 @@
 {
   "users": [
     {
-      "id": "8ea8",
-      "name": "khaled mohammed saad",
-      "phone": "010 25674491",
-      "E-mail": "manoog506@gmail.com",
-      "subject": "ew",
-      "message": "wd122"
-    },
-    {
-      "id": "a792",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": ""
-    },
-    {
-      "id": "400d",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "jx8aui3i839oe5ppzhgxe"
-    },
-    {
-      "id": "0ea7",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "vkw021ai12oyxi3i7sfcs"
-    },
-    {
-      "id": "0b9e",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "i47ygs941upsyrxbhjot5j"
-    },
-    {
-      "id": "124b",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "itav6kfby9przsyx0zm4b"
-    },
-    {
-      "id": "43d8",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "rsmg3kdihhzm0xmsju1x"
-    },
-    {
-      "id": "722c",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "8zmpvrjkj5l9rwryuntx"
-    },
-    {
-      "id": "326a",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "o9l7llldepp4yg3gldj94"
-    },
-    {
-      "id": "5ca6",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "90sapne3ybrzwe4p4iyg39"
-    },
-    {
-      "id": "a2a7",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "ginq5qy52xs61yjtyutwf"
-    },
-    {
-      "id": "0291",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "emwgvlc9fxqvle8ut4vwh"
-    },
-    {
-      "id": "a959",
-      "name": "",
-      "phone": "",
-      "E-mail": "",
-      "subject": "",
-      "message": "",
-      "token": "nt7ner50one658q71fmpvv"
+      "id": "991d",
+      "name": "Admin",
+      "password": "admin123",
+      "E-mail": "admin@site.com",
+      "message": "Accept Sign up if entered valid Ref Code",
+      "token": "nlcynrji3nmqhyt1zlcue"
     }
   ]
 }
