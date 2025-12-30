@@ -20,7 +20,7 @@ submitLogin.addEventListener("click", function () {
     console.log(passLogin.value);
     console.log(lgChk);
 
-    fetch('http://localhost:3001/users', {
+    fetch('https://stunning-robot-77pr76g9r9w3xrvp-3001.app.github.dev/users', {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
